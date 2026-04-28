@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Git & GitHub Cheat Sheet — SIVAIAH POLUMAINA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav">
+      <a class="npill" href="#concepts"
+        ><span class="ndot" style="background: var(--purple)"></span>Concepts</a
+      >
+      <a class="npill" href="#workflow"
+        ><span class="ndot" style="background: var(--green)"></span>Workflow</a
+      >
+      <a class="npill" href="#commands"
+        ><span class="ndot" style="background: var(--red)"></span>Commands</a
+      >
+      <a class="npill" href="#advanced"
+        ><span class="ndot" style="background: var(--cyan)"></span>Advanced</a
+      >
+      <a class="npill" href="#aliases"
+        ><span class="ndot" style="background: var(--yellow)"></span>Aliases</a
+      >
+      <a class="npill" href="#github"
+        ><span class="ndot" style="background: var(--blue)"></span>GitHub</a
+      >
+      <a class="npill" href="#emergency"
+        ><span class="ndot" style="background: var(--orange)"></span
+        >Emergency</a
+      >
+    </nav>
+
+    <div class="wrap">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-row1">
+          <div>
+            <div class="hero-title">
+              <span class="t-r">Git</span> <span class="t-d">&amp;</span>
+              <span class="t-b">GitHub</span>
+            </div>
+            <div class="hero-sub">
+              // COMPLETE CHEAT SHEET — 80/20 RULE — the 20% of commands used
+              80% of the time
+            </div>
+          </div>
+          <div class="badge-wrap">
+            <div class="badge">80 / 20 RULE</div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <span class="sv" style="color: var(--blue)">35+</span
+            ><span class="sl">Commands</span>
+          </div>
+          <div class="stat">
+            <span class="sv" style="color: var(--green)">7</span
+            ><span class="sl">Sections</span>
+          </div>
+          <div class="stat">
+            <span class="sv" style="color: var(--purple)">8</span
+            ><span class="sl">Concepts</span>
+          </div>
+          <div class="stat">
+            <span class="sv" style="color: var(--cyan)">6</span
+            ><span class="sl">Advanced</span>
+          </div>
+          <div class="stat">
+            <span class="sv" style="color: var(--orange)">5</span
+            ><span class="sl">Emergency</span>
+          </div>
+          <!-- <div class="stat">
+            <span class="sv" style="color: var(--yellow)">Free</span
+            ><span class="sl">Deploy</span>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- AUTHOR -->
+      <div class="author">
+        <div class="author-avatar">SP</div>
+        <div class="author-info">
+          <div class="author-name">SIVAIAH POLUMAINA</div>
+          <div class="author-role">Developer · Git &amp; GitHub Enthusiast</div>
+          <a
+            class="author-link"
+            href="https://github.com/SHIVA27017"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            github.com/SHIVA27017
+          </a>
+        </div>
+        <div class="author-badge">✦ CHEAT SHEET v1.0</div>
+      </div>
+
+      <!-- ROW 1: Concepts + Workflow -->
+      <div class="g2">
+        <!-- CONCEPTS -->
+        <div class="card" id="concepts" data-c="purple">
+          <div class="ch" onclick="tog(this)">
+            <span class="ci" style="background: var(--purple)"></span>
+            <h2>Core Concepts</h2>
+            <span class="cc">8 terms</span>
+            <span class="chev">▾</span>
+          </div>
+          <div class="cb show">
+            <div class="cg">
+              <div class="ci2">
+                <div class="ct">Repository (repo)</div>
+                <div class="cd">
+                  Project folder tracked by Git — every file, every change, full
+                  history stored in
+                  <code style="color: var(--blue)">.git/</code>
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">Working Directory</div>
+                <div class="cd">
+                  Your local files as they actually exist on disk right now —
+                  untracked changes live here
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">Staging Area (Index)</div>
+                <div class="cd">
+                  A "draft" zone — changes you've explicitly marked to go into
+                  the next commit
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">Commit</div>
+                <div class="cd">
+                  An immutable snapshot with a unique SHA hash, author,
+                  timestamp, and parent pointer
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">Branch</div>
+                <div class="cd">
+                  A movable pointer to a commit. Creating branches is instant
+                  and cheap in Git
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">HEAD</div>
+                <div class="cd">
+                  A pointer to your current branch tip. "Detached HEAD" =
+                  pointing directly at a commit
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">Remote</div>
+                <div class="cd">
+                  A named URL to another repo (GitHub).
+                  <code style="color: var(--blue)">origin</code> = default,
+                  <code style="color: var(--blue)">upstream</code> = original
+                  fork source
+                </div>
+              </div>
+              <div class="ci2">
+                <div class="ct">Merge vs Rebase</div>
+                <div class="cd">
+                  Merge preserves history with a merge commit. Rebase rewrites
+                  commits for a linear history
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORKFLOW -->
+        <div class="card" id="workflow" data-c="green">
+          <div class="ch" onclick="tog(this)">
+            <span class="ci" style="background: var(--green)"></span>
+            <h2>Everyday Workflow</h2>
+            <span class="cc">most common path</span>
+            <span class="chev">▾</span>
+          </div>
+          <div class="cb show">
+            <div class="wbox">
+              <div class="ws">
+                <div class="wn">1</div>
+                <div>
+                  <div class="wc">git pull origin main</div>
+                  <div class="wd">
+                    Sync latest changes before starting — always!
+                  </div>
+                </div>
+              </div>
+              <div class="wa">↓</div>
+              <div class="ws">
+                <div class="wn">2</div>
+                <div>
+                  <div class="wc">git checkout -b feature/my-thing</div>
+                  <div class="wd">
+                    Create a new isolated branch for your work
+                  </div>
+                </div>
+              </div>
+              <div class="wa">↓ — make your changes —</div>
+              <div class="ws">
+                <div class="wn">3</div>
+                <div>
+                  <div class="wc">git status &amp;&amp; git diff</div>
+                  <div class="wd">Review what changed before staging</div>
+                </div>
+              </div>
+              <div class="wa">↓</div>
+              <div class="ws">
+                <div class="wn">4</div>
+                <div>
+                  <div class="wc">git add .</div>
+                  <div class="wd">
+                    Stage all changes (or use
+                    <code style="color: var(--green)">-p</code> for selective)
+                  </div>
+                </div>
+              </div>
+              <div class="wa">↓</div>
+              <div class="ws">
+                <div class="wn">5</div>
+                <div>
+                  <div class="wc">git commit -m "feat: add login page"</div>
+                  <div class="wd">Snapshot with a meaningful message</div>
+                </div>
+              </div>
+              <div class="wa">↓</div>
+              <div class="ws">
+                <div class="wn">6</div>
+                <div>
+                  <div class="wc">git push -u origin feature/my-thing</div>
+                  <div class="wd">Push to GitHub → open a Pull Request</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESSENTIAL COMMANDS -->
+      <div class="card" id="commands" data-c="red" style="margin-bottom: 14px">
+        <div class="ch" onclick="tog(this)">
+          <span class="ci" style="background: var(--red)"></span>
+          <h2>Essential Commands — The Core 80/20</h2>
+          <span class="cc">27 cmds</span>
+          <span class="chev">▾</span>
+        </div>
+        <div class="cb show">
+          <!-- MOBILE CARDS -->
+          <div class="cml">
+            <div class="cgl">── Setup &amp; Init</div>
+            <div class="cmc">
+              <div class="cm-c">git init</div>
+              <div class="cm-d">
+                Initialize a new local Git repo in the current folder
+              </div>
+              <div class="cm-f">
+                <code>--bare</code> — create a bare repo (for servers, no
+                working dir)<br /><code>--initial-branch=main</code> — set
+                default branch name
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git clone &lt;url&gt;</div>
+              <div class="cm-d">Download a remote repo with full history</div>
+              <div class="cm-f">
+                <code>--depth 1</code> — shallow (latest commit only, fast)<br /><code
+                  >-b &lt;branch&gt;</code
+                >
+                — clone specific branch<br /><code>--filter=blob:none</code> —
+                partial clone for large repos
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git config</div>
+              <div class="cm-d">
+                Set user name, email, editor, aliases, preferences
+              </div>
+              <div class="cm-f">
+                <code>--global</code> — all repos &nbsp;·&nbsp;
+                <code>--local</code> — this repo<br /><code>--list</code> — show
+                all settings<br /><code>user.name "Name"</code> &nbsp;·&nbsp;
+                <code>user.email "email"</code>
+              </div>
+            </div>
+
+            <div class="cgl">── Snapshot &amp; Stage</div>
+            <div class="cmc">
+              <div class="cm-c">git status</div>
+              <div class="cm-d">Show modified, staged, and untracked files</div>
+              <div class="cm-f">
+                <code>-s</code> — compact output &nbsp;·&nbsp; <code>-b</code> —
+                show branch
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git add &lt;file&gt;</div>
+              <div class="cm-d">Stage changes for the next commit</div>
+              <div class="cm-f">
+                <code>.</code> — stage everything &nbsp;·&nbsp;
+                <code>-p</code> — patch mode (pick hunks)<br /><code>-u</code> —
+                only tracked files &nbsp;·&nbsp; <code>*.js</code> — wildcard
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git commit</div>
+              <div class="cm-d">
+                Record staged changes as a permanent snapshot
+              </div>
+              <div class="cm-f">
+                <code>-m "msg"</code> — inline message<br /><code>-a</code> —
+                auto-stage tracked files + commit<br /><code>--amend</code> —
+                rewrite the last commit<br /><code>--amend --no-edit</code> —
+                amend, keep same message
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git diff</div>
+              <div class="cm-d">Show changes not yet staged</div>
+              <div class="cm-f">
+                <code>--staged</code> — staged changes vs last commit<br /><code
+                  >--stat</code
+                >
+                — summary of files changed<br /><code>main...HEAD</code> —
+                changes on your branch only
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git restore &lt;file&gt;</div>
+              <div class="cm-d">
+                Discard working-directory changes (safe, modern undo)
+              </div>
+              <div class="cm-f">
+                <code>--staged</code> — unstage without losing changes<br /><code
+                  >.</code
+                >
+                — restore all tracked files
+              </div>
+            </div>
+
+            <div class="cgl">── History &amp; Log</div>
+            <div class="cmc">
+              <div class="cm-c">git log</div>
+              <div class="cm-d">
+                Show commit history with hashes and messages
+              </div>
+              <div class="cm-f">
+                <code>--oneline --graph --all</code> — visual branch tree<br /><code
+                  >-n 10</code
+                >
+                — last 10 commits<br /><code>--author="x"</code> — filter by
+                author<br /><code>--since="2 weeks ago"</code> — filter by date
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git show &lt;hash&gt;</div>
+              <div class="cm-d">Full diff + metadata of a specific commit</div>
+              <div class="cm-f">
+                <code>--stat</code> — files changed only &nbsp;·&nbsp;
+                <code>--name-only</code>
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git blame &lt;file&gt;</div>
+              <div class="cm-d">
+                See who wrote each line and in which commit
+              </div>
+              <div class="cm-f">
+                <code>-L 10,25</code> — lines 10–25 only<br /><code>-w</code> —
+                ignore whitespace changes
+              </div>
+            </div>
+
+            <div class="cgl">── Branching &amp; Merging</div>
+            <div class="cmc">
+              <div class="cm-c">git branch</div>
+              <div class="cm-d">List, create, rename, or delete branches</div>
+              <div class="cm-f">
+                <code>-a</code> — all (local + remote) &nbsp;·&nbsp;
+                <code>-r</code> — remote only<br /><code>-d &lt;name&gt;</code>
+                — delete merged &nbsp;·&nbsp; <code>-D</code> — force delete<br /><code
+                  >-m &lt;new&gt;</code
+                >
+                — rename
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git switch / checkout</div>
+              <div class="cm-d">
+                Switch branches (switch is the modern command)
+              </div>
+              <div class="cm-f">
+                <code>-c &lt;name&gt;</code> — create + switch (switch)<br /><code
+                  >-b &lt;name&gt;</code
+                >
+                — create + switch (checkout)
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git merge &lt;branch&gt;</div>
+              <div class="cm-d">
+                Merge another branch into current, preserving history
+              </div>
+              <div class="cm-f">
+                <code>--no-ff</code> — always create a merge commit<br /><code
+                  >--squash</code
+                >
+                — squash all into one commit<br /><code>--abort</code> — cancel
+                a conflicted merge
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git rebase &lt;branch&gt;</div>
+              <div class="cm-d">
+                Replay your commits on top of another branch (linear history)
+              </div>
+              <div class="cm-f">
+                <code>-i HEAD~3</code> — interactive: squash, edit, reorder<br /><code
+                  >--onto &lt;target&gt;</code
+                >
+                — move branch to new base<br /><code>--abort</code> ·
+                <code>--continue</code> · <code>--skip</code>
+              </div>
+            </div>
+
+            <div class="cgl">── Remote &amp; Sync</div>
+            <div class="cmc">
+              <div class="cm-c">git remote</div>
+              <div class="cm-d">Manage connections to remote repositories</div>
+              <div class="cm-f">
+                <code>-v</code> — show URLs &nbsp;·&nbsp;
+                <code>add origin &lt;url&gt;</code><br /><code
+                  >set-url origin &lt;url&gt;</code
+                >
+                — change URL<br /><code>rm &lt;name&gt;</code> — remove
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git fetch</div>
+              <div class="cm-d">
+                Download remote changes without touching local branch
+              </div>
+              <div class="cm-f">
+                <code>--all</code> — all remotes &nbsp;·&nbsp;
+                <code>--prune</code> — remove stale refs<br /><code
+                  >origin &lt;branch&gt;</code
+                >
+                — fetch specific branch
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git pull</div>
+              <div class="cm-d">
+                Fetch remote + merge into current branch in one step
+              </div>
+              <div class="cm-f">
+                <code>--rebase</code> — rebase instead of merge (cleaner
+                history)<br /><code>--ff-only</code> — only if fast-forward
+                possible
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git push</div>
+              <div class="cm-d">
+                Upload local commits to the remote repository
+              </div>
+              <div class="cm-f">
+                <code>-u origin main</code> — set upstream on first push<br /><code
+                  >--force-with-lease</code
+                >
+                — safe force push<br /><code>--tags</code> — also push tags<br /><code
+                  >--delete origin &lt;branch&gt;</code
+                >
+                — delete remote branch
+              </div>
+            </div>
+
+            <div class="cgl">── Stash &amp; Undo</div>
+            <div class="cmc">
+              <div class="cm-c">git stash</div>
+              <div class="cm-d">
+                Temporarily shelve uncommitted changes to switch context
+              </div>
+              <div class="cm-f">
+                <code>push -m "msg"</code> — named stash &nbsp;·&nbsp;
+                <code>-u</code> — include untracked<br /><code>pop</code> —
+                apply + remove &nbsp;·&nbsp; <code>apply</code> — apply +
+                keep<br /><code>list</code> — show all &nbsp;·&nbsp;
+                <code>drop</code> — delete one
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git reset</div>
+              <div class="cm-d">
+                Move HEAD backward and optionally change staging/files
+              </div>
+              <div class="cm-f">
+                <code>--soft HEAD~1</code> — undo commit, keep staged<br /><code
+                  >--mixed HEAD~1</code
+                >
+                — undo commit, unstage (default)<br /><code class="warn"
+                  >--hard HEAD~1</code
+                >
+                <span class="warn">— discard everything ⚠️</span>
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git revert &lt;hash&gt;</div>
+              <div class="cm-d">
+                Undo a commit by creating a new "reverse" commit (safe on shared
+                branches)
+              </div>
+              <div class="cm-f">
+                <code>--no-commit</code> — stage the revert, don't commit yet<br /><code
+                  >-n HEAD~3..HEAD</code
+                >
+                — revert a range
+              </div>
+            </div>
+
+            <div class="cgl">── Tags &amp; Utilities</div>
+            <div class="cmc">
+              <div class="cm-c">git tag</div>
+              <div class="cm-d">
+                Mark a commit with a version label for releases
+              </div>
+              <div class="cm-f">
+                <code>-a v1.0.0 -m "msg"</code> — annotated tag (recommended)<br /><code
+                  >-d &lt;tag&gt;</code
+                >
+                — delete local &nbsp;·&nbsp; push with <code>--tags</code>
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git cherry-pick &lt;hash&gt;</div>
+              <div class="cm-d">
+                Apply a single specific commit onto your current branch
+              </div>
+              <div class="cm-f">
+                <code>--no-commit</code> — apply changes without committing<br /><code
+                  >A..B</code
+                >
+                — pick a range of commits
+              </div>
+            </div>
+            <div class="cmc">
+              <div class="cm-c">git bisect</div>
+              <div class="cm-d">
+                Binary search through history to find which commit introduced a
+                bug
+              </div>
+              <div class="cm-f">
+                <code>start</code> → <code>bad</code> →
+                <code>good &lt;hash&gt;</code> → <code>reset</code><br /><code
+                  >run &lt;script&gt;</code
+                >
+                — automate with a test script
+              </div>
+            </div>
+          </div>
+          <!-- TABLE tablet+ -->
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 22%">Command</th>
+                  <th style="width: 30%">What it Does</th>
+                  <th>Key Flags / Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tg">
+                  <td colspan="3">── SETUP &amp; INIT</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git init</code></td>
+                  <td>
+                    <span class="td2">Initialize a new local Git repo</span>
+                  </td>
+                  <td>
+                    <code class="tf">--bare</code>
+                    <span class="td2">— server repo</span> ·
+                    <code class="tf">--initial-branch=main</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git clone &lt;url&gt;</code></td>
+                  <td>
+                    <span class="td2"
+                      >Copy a remote repo with full history</span
+                    >
+                  </td>
+                  <td>
+                    <code class="tf">--depth 1</code> ·
+                    <code class="tf">-b &lt;branch&gt;</code> ·
+                    <code class="tf">--filter=blob:none</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git config</code></td>
+                  <td>
+                    <span class="td2"
+                      >Set name, email, editor, preferences</span
+                    >
+                  </td>
+                  <td>
+                    <code class="tf">--global</code> ·
+                    <code class="tf">--local</code> ·
+                    <code class="tf">--list</code>
+                  </td>
+                </tr>
+                <tr class="tg">
+                  <td colspan="3">── SNAPSHOT &amp; STAGE</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git status</code></td>
+                  <td>
+                    <span class="td2"
+                      >Show modified, staged, untracked files</span
+                    >
+                  </td>
+                  <td>
+                    <code class="tf">-s</code>
+                    <span class="td2">compact</span> ·
+                    <code class="tf">-b</code>
+                    <span class="td2">show branch</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git add &lt;file&gt;</code></td>
+                  <td>
+                    <span class="td2">Stage file(s) for next commit</span>
+                  </td>
+                  <td>
+                    <code class="tf">.</code> · <code class="tf">-p</code>
+                    <span class="td2">patch</span> · <code class="tf">-u</code>
+                    <span class="td2">tracked only</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git commit</code></td>
+                  <td>
+                    <span class="td2">Record staged changes as a snapshot</span>
+                  </td>
+                  <td>
+                    <code class="tf">-m "msg"</code> ·
+                    <code class="tf">-a</code> ·
+                    <code class="tf">--amend</code> ·
+                    <code class="tf">--amend --no-edit</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git diff</code></td>
+                  <td>
+                    <span class="td2"
+                      >Show unstaged changes vs last commit</span
+                    >
+                  </td>
+                  <td>
+                    <code class="tf">--staged</code> ·
+                    <code class="tf">--stat</code> ·
+                    <code class="tf">main...HEAD</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git restore &lt;file&gt;</code></td>
+                  <td>
+                    <span class="td2">Discard working-directory changes</span>
+                  </td>
+                  <td>
+                    <code class="tf">--staged</code>
+                    <span class="td2">unstage</span> · <code class="tf">.</code>
+                    <span class="td2">restore all</span>
+                  </td>
+                </tr>
+                <tr class="tg">
+                  <td colspan="3">── HISTORY &amp; LOG</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git log</code></td>
+                  <td>
+                    <span class="td2">Show commit history with hashes</span>
+                  </td>
+                  <td>
+                    <code class="tf">--oneline --graph --all</code> ·
+                    <code class="tf">-n 10</code> ·
+                    <code class="tf">--since="2w"</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git show &lt;hash&gt;</code></td>
+                  <td>
+                    <span class="td2">Full diff + metadata of a commit</span>
+                  </td>
+                  <td>
+                    <code class="tf">--stat</code> ·
+                    <code class="tf">--name-only</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git blame &lt;file&gt;</code></td>
+                  <td><span class="td2">Who wrote each line and when</span></td>
+                  <td>
+                    <code class="tf">-L 10,25</code> ·
+                    <code class="tf">-w</code>
+                    <span class="td2">ignore whitespace</span>
+                  </td>
+                </tr>
+                <tr class="tg">
+                  <td colspan="3">── BRANCHING &amp; MERGING</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git branch</code></td>
+                  <td>
+                    <span class="td2"
+                      >List, create, rename, delete branches</span
+                    >
+                  </td>
+                  <td>
+                    <code class="tf">-a</code> · <code class="tf">-r</code> ·
+                    <code class="tf">-d</code> · <code class="tf">-D</code> ·
+                    <code class="tf">-m &lt;new&gt;</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git switch / checkout</code></td>
+                  <td><span class="td2">Switch or create branches</span></td>
+                  <td>
+                    <code class="tf">-c &lt;name&gt;</code> (switch) ·
+                    <code class="tf">-b &lt;name&gt;</code> (checkout)
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git merge &lt;branch&gt;</code></td>
+                  <td><span class="td2">Merge branch into current</span></td>
+                  <td>
+                    <code class="tf">--no-ff</code> ·
+                    <code class="tf">--squash</code> ·
+                    <code class="tf">--abort</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git rebase &lt;branch&gt;</code></td>
+                  <td>
+                    <span class="td2">Replay commits for linear history</span>
+                  </td>
+                  <td>
+                    <code class="tf">-i HEAD~3</code> ·
+                    <code class="tf">--onto</code> ·
+                    <code class="tf">--abort</code> ·
+                    <code class="tf">--continue</code>
+                  </td>
+                </tr>
+                <tr class="tg">
+                  <td colspan="3">── REMOTE &amp; SYNC</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git remote</code></td>
+                  <td><span class="td2">Manage remote connections</span></td>
+                  <td>
+                    <code class="tf">-v</code> · <code class="tf">add</code> ·
+                    <code class="tf">set-url</code> · <code class="tf">rm</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git fetch</code></td>
+                  <td>
+                    <span class="td2">Download remote changes, no merge</span>
+                  </td>
+                  <td>
+                    <code class="tf">--all</code> ·
+                    <code class="tf">--prune</code> ·
+                    <code class="tf">origin &lt;branch&gt;</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git pull</code></td>
+                  <td>
+                    <span class="td2">Fetch + merge into current branch</span>
+                  </td>
+                  <td>
+                    <code class="tf">--rebase</code> ·
+                    <code class="tf">--ff-only</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git push</code></td>
+                  <td><span class="td2">Upload commits to remote</span></td>
+                  <td>
+                    <code class="tf">-u origin main</code> ·
+                    <code class="tf">--force-with-lease</code> ·
+                    <code class="tf">--tags</code>
+                  </td>
+                </tr>
+                <tr class="tg">
+                  <td colspan="3">── STASH &amp; UNDO</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git stash</code></td>
+                  <td><span class="td2">Shelve uncommitted changes</span></td>
+                  <td>
+                    <code class="tf">push -m -u</code> ·
+                    <code class="tf">pop</code> ·
+                    <code class="tf">apply</code> ·
+                    <code class="tf">list</code> · <code class="tf">drop</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git reset</code></td>
+                  <td>
+                    <span class="td2">Move HEAD backward, alter staging</span>
+                  </td>
+                  <td>
+                    <code class="tf">--soft</code> ·
+                    <code class="tf">--mixed</code> ·
+                    <code style="color: var(--orange)">--hard ⚠️</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git revert &lt;hash&gt;</code></td>
+                  <td>
+                    <span class="td2">Create inverse commit (safe undo)</span>
+                  </td>
+                  <td>
+                    <code class="tf">--no-commit</code> ·
+                    <code class="tf">-n HEAD~3..HEAD</code>
+                  </td>
+                </tr>
+                <tr class="tg">
+                  <td colspan="3">── TAGS &amp; UTILITIES</td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git tag</code></td>
+                  <td>
+                    <span class="td2">Mark commit with version label</span>
+                  </td>
+                  <td>
+                    <code class="tf">-a v1.0.0 -m "msg"</code> ·
+                    <code class="tf">-d</code> ·
+                    <code class="tf">push --tags</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git cherry-pick &lt;hash&gt;</code></td>
+                  <td>
+                    <span class="td2"
+                      >Apply one commit onto current branch</span
+                    >
+                  </td>
+                  <td>
+                    <code class="tf">--no-commit</code> ·
+                    <code class="tf">A..B</code> <span class="td2">range</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="tc">git bisect</code></td>
+                  <td>
+                    <span class="td2">Binary search to find bug commit</span>
+                  </td>
+                  <td>
+                    <code class="tf">start</code> ·
+                    <code class="tf">good</code> · <code class="tf">bad</code> ·
+                    <code class="tf">run &lt;script&gt;</code> ·
+                    <code class="tf">reset</code>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW: Advanced + Emergency -->
+      <div class="g2">
+        <!-- ADVANCED -->
+        <div class="card" id="advanced" data-c="cyan">
+          <div class="ch" onclick="tog(this)">
+            <span class="ci" style="background: var(--cyan)"></span>
+            <h2>Advanced Commands</h2>
+            <span class="cc">power tools</span>
+            <span class="chev">▾</span>
+          </div>
+          <div class="cb show">
+            <div class="cml">
+              <div class="cgl">── Pro-Level Git</div>
+              <div class="cmc">
+                <div class="cm-c">git reflog</div>
+                <div class="cm-d">
+                  History of every HEAD movement — your safety net to recover
+                  anything
+                </div>
+                <div class="cm-f">
+                  <code>show HEAD@{2}</code> — see state 2 moves ago<br /><code
+                    >expire --expire=now --all</code
+                  >
+                  — clean up reflog
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">git worktree</div>
+                <div class="cm-d">
+                  Check out multiple branches simultaneously in separate
+                  directories
+                </div>
+                <div class="cm-f">
+                  <code>add ../hotfix hotfix-branch</code> — new working dir<br /><code
+                    >list</code
+                  >
+                  — see all worktrees &nbsp;·&nbsp;
+                  <code>remove ../hotfix</code>
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">git sparse-checkout</div>
+                <div class="cm-d">
+                  Only check out specific directories from a large monorepo
+                </div>
+                <div class="cm-f">
+                  <code>set services/api libs/shared</code> — limit checkout<br /><code
+                    >disable</code
+                  >
+                  — revert to full checkout
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">git submodule</div>
+                <div class="cm-d">
+                  Embed an external repo inside your repo at a specific commit
+                </div>
+                <div class="cm-f">
+                  <code>add &lt;url&gt; path/</code> — add submodule<br /><code
+                    >update --init --recursive</code
+                  >
+                  — init after clone<br /><code>foreach git pull</code> — update
+                  all
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">git filter-repo</div>
+                <div class="cm-d">
+                  Rewrite history — remove secrets, large files, restructure
+                  repo
+                </div>
+                <div class="cm-f">
+                  <code>--path src/</code> — keep only src/ directory<br /><code
+                    >--invert-paths --path secrets.txt</code
+                  >
+                  — remove file<br /><span style="color: var(--orange)"
+                    >⚠️ rewrites all hashes — coordinate with team</span
+                  >
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">git gc</div>
+                <div class="cm-d">
+                  Garbage-collect and optimize the local repository database
+                </div>
+                <div class="cm-f">
+                  <code>--aggressive --prune=now</code> — deep clean<br />Run
+                  periodically on large repos to reclaim disk space
+                </div>
+              </div>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 28%">Command</th>
+                    <th style="width: 32%">What it Does</th>
+                    <th>Key Flags</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code class="tc">git reflog</code></td>
+                    <td>
+                      <span class="td2"
+                        >History of every HEAD move — recover anything</span
+                      >
+                    </td>
+                    <td>
+                      <code class="tf">show HEAD@{2}</code> ·
+                      <code class="tf">expire --expire=now</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">git worktree</code></td>
+                    <td>
+                      <span class="td2"
+                        >Multiple branches checked out simultaneously</span
+                      >
+                    </td>
+                    <td>
+                      <code class="tf">add ../dir branch</code> ·
+                      <code class="tf">list</code> ·
+                      <code class="tf">remove</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">git sparse-checkout</code></td>
+                    <td>
+                      <span class="td2"
+                        >Check out only specific dirs from large repos</span
+                      >
+                    </td>
+                    <td>
+                      <code class="tf">set services/api</code> ·
+                      <code class="tf">disable</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">git submodule</code></td>
+                    <td>
+                      <span class="td2"
+                        >Embed external repo at specific commit</span
+                      >
+                    </td>
+                    <td>
+                      <code class="tf">add</code> ·
+                      <code class="tf">update --init --recursive</code> ·
+                      <code class="tf">foreach</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">git filter-repo</code></td>
+                    <td>
+                      <span class="td2"
+                        >Rewrite history, remove secrets/large files</span
+                      >
+                    </td>
+                    <td>
+                      <code class="tf">--path</code> ·
+                      <code class="tf">--invert-paths</code>
+                      <span style="color: var(--orange)">⚠️</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">git gc</code></td>
+                    <td>
+                      <span class="td2"
+                        >Optimize and compress the local repo</span
+                      >
+                    </td>
+                    <td><code class="tf">--aggressive --prune=now</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY -->
+        <div class="card" id="emergency" data-c="orange">
+          <div class="ch" onclick="tog(this)">
+            <span class="ci" style="background: var(--orange)"></span>
+            <h2>Emergency Recovery 🚨</h2>
+            <span class="cc">when things go wrong</span>
+            <span class="chev">▾</span>
+          </div>
+          <div class="cb show">
+            <div class="ebox">
+              <div class="eitem">
+                <div class="eitem-title">⚠️ Accidentally committed to main</div>
+                <div class="eitem-cmd">
+                  git branch feature/my-fix<br />git reset --hard HEAD~1<br />git
+                  checkout feature/my-fix
+                </div>
+                <div class="eitem-desc">
+                  Move commit to a new branch, reset main back
+                </div>
+              </div>
+              <div class="eitem">
+                <div class="eitem-title">
+                  ⚠️ Need to undo last commit (keep changes)
+                </div>
+                <div class="eitem-cmd">git reset --soft HEAD~1</div>
+                <div class="eitem-desc">
+                  Commit is undone, changes are staged and safe
+                </div>
+              </div>
+              <div class="eitem blue">
+                <div class="eitem-title">💡 Lost commits after reset —hard</div>
+                <div class="eitem-cmd">
+                  git reflog<br />git checkout -b recovery HEAD@{3}
+                </div>
+                <div class="eitem-desc">
+                  reflog keeps all moves for ~90 days — nothing is truly lost
+                </div>
+              </div>
+              <div class="eitem blue">
+                <div class="eitem-title">💡 Merge conflict — start over</div>
+                <div class="eitem-cmd">
+                  git merge --abort<br />git rebase --abort
+                </div>
+                <div class="eitem-desc">
+                  Cleanly cancels the merge/rebase, restores pre-merge state
+                </div>
+              </div>
+              <div class="eitem green">
+                <div class="eitem-title">✅ Sync fork with original repo</div>
+                <div class="eitem-cmd">
+                  git remote add upstream &lt;original-url&gt;<br />git fetch
+                  upstream<br />git merge upstream/main
+                </div>
+                <div class="eitem-desc">
+                  Keep your fork up to date with the source project
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW: Aliases + GitHub -->
+      <div class="g2">
+        <!-- ALIASES -->
+        <div class="card" id="aliases" data-c="yellow">
+          <div class="ch" onclick="tog(this)">
+            <span class="ci" style="background: var(--yellow)"></span>
+            <h2>Must-Know Aliases &amp; Power Tips</h2>
+            <span class="chev">▾</span>
+          </div>
+          <div class="cb show">
+            <div class="alias-box">
+              <div class="ab">
+                <div class="ab-cmd">git log --oneline --graph --all</div>
+                <div class="ab-desc">
+                  Visual branch tree — alias as
+                  <code style="color: var(--green)">git lg</code>
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git commit --amend --no-edit</div>
+                <div class="ab-desc">
+                  Add staged files to last commit, keep message
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git push --force-with-lease</div>
+                <div class="ab-desc">
+                  Safe force push — fails if remote changed
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git stash push -u -m "wip"</div>
+                <div class="ab-desc">
+                  Stash with name, including untracked files
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git diff main...HEAD</div>
+                <div class="ab-desc">
+                  Show only your branch's changes vs main
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git clean -fdx</div>
+                <div class="ab-desc">
+                  Remove all untracked + ignored files ⚠️
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git shortlog -sn</div>
+                <div class="ab-desc">Ranked contributors by commit count</div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">
+                  git config --global alias.lg "log --oneline --graph --all"
+                </div>
+                <div class="ab-desc">
+                  Set up the
+                  <code style="color: var(--green)">git lg</code> alias globally
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">git bisect run npm test</div>
+                <div class="ab-desc">
+                  Auto-bisect using your test suite as oracle
+                </div>
+              </div>
+              <div class="ab">
+                <div class="ab-cmd">
+                  git branch --merged | xargs git branch -d
+                </div>
+                <div class="ab-desc">
+                  Delete all local branches already merged to main
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GITHUB -->
+        <div class="card" id="github" data-c="blue">
+          <div class="ch" onclick="tog(this)">
+            <span class="ci" style="background: var(--blue)"></span>
+            <h2>GitHub-Specific Concepts</h2>
+            <span class="chev">▾</span>
+          </div>
+          <div class="cb show">
+            <div class="cml">
+              <div class="cmc">
+                <div class="cm-c">Fork</div>
+                <div class="cm-d">
+                  Copy a repo to your account — starting point for open-source
+                  contribution
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">Pull Request (PR)</div>
+                <div class="cm-d">
+                  Propose merging your branch. Triggers code review, discussion,
+                  CI checks
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">Issues</div>
+                <div class="cm-d">
+                  Bug reports, feature requests, tasks — with labels,
+                  milestones, assignees
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">GitHub Actions</div>
+                <div class="cm-d">
+                  Built-in CI/CD — run tests, lint, build, deploy on
+                  push/PR/schedule
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">Releases &amp; Tags</div>
+                <div class="cm-d">
+                  Package and distribute versions of your software tied to a git
+                  tag
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">.gitignore</div>
+                <div class="cm-d">
+                  Patterns Git should never track —
+                  <code style="color: var(--blue)">node_modules/</code>,
+                  <code style="color: var(--blue)">.env</code>,
+                  <code style="color: var(--blue)">dist/</code>
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">Protected Branches</div>
+                <div class="cm-d">
+                  Rules requiring PRs, reviews, or CI passing before merging
+                  into <code style="color: var(--blue)">main</code>
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">GitHub Pages</div>
+                <div class="cm-d">
+                  Free static site hosting — this cheat sheet can be deployed
+                  here!
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">Dependabot</div>
+                <div class="cm-d">
+                  Automated PRs to keep your dependencies up to date and secure
+                </div>
+              </div>
+              <div class="cmc">
+                <div class="cm-c">gh CLI</div>
+                <div class="cm-d">
+                  <code style="color: var(--green)">gh pr create</code> ·
+                  <code style="color: var(--green)">gh repo clone</code> ·
+                  <code style="color: var(--green)">gh issue list</code> —
+                  GitHub from terminal
+                </div>
+              </div>
+            </div>
+            <div class="tw">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: 34%">Feature</th>
+                    <th>What it Does</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code class="tc">Fork</code></td>
+                    <td>
+                      <span class="td2"
+                        >Copy repo to your account — start of open-source
+                        contribution</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">Pull Request (PR)</code></td>
+                    <td>
+                      <span class="td2"
+                        >Propose merging a branch — triggers reviews, CI checks,
+                        discussion</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">Issues</code></td>
+                    <td>
+                      <span class="td2"
+                        >Bug reports, features, tasks — with labels, milestones,
+                        assignees</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">GitHub Actions</code></td>
+                    <td>
+                      <span class="td2"
+                        >Built-in CI/CD: test, lint, build, deploy on
+                        push/PR/schedule</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">Releases &amp; Tags</code></td>
+                    <td>
+                      <span class="td2"
+                        >Package and distribute versioned software tied to a git
+                        tag</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">.gitignore</code></td>
+                    <td>
+                      <span class="td2"
+                        >Patterns never tracked — <code>node_modules/</code>,
+                        <code>.env</code>, <code>dist/</code></span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">Protected Branches</code></td>
+                    <td>
+                      <span class="td2"
+                        >Require PRs, reviews, CI pass before merging into
+                        <code>main</code></span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">GitHub Pages</code></td>
+                    <td>
+                      <span class="td2"
+                        >Free static site hosting at
+                        <code>username.github.io/repo</code></span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">Dependabot</code></td>
+                    <td>
+                      <span class="td2"
+                        >Auto-PRs to keep dependencies updated and secure</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code class="tc">gh CLI</code></td>
+                    <td>
+                      <span class="td2"
+                        ><code class="tf">gh pr create</code> ·
+                        <code class="tf">gh repo clone</code> ·
+                        <code class="tf">gh issue list</code></span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="foot">
+        <span>git version 2.x · github.com</span>
+        <span class="foot-tip"
+          >💡 <code>git help &lt;command&gt;</code> — opens the full manual
+          page</span
+        >
+        <div class="foot-author">
+          <span>Coded by</span>
+          <strong style="color: var(--text)">SIVAIAH POLUMAINA</strong>
+          <span>·</span>
+          <a href="https://github.com/SHIVA27017" target="_blank" rel="noopener"
+            >github.com/SHIVA27017</a
+          >
+        </div>
+      </footer>
+    </div>
+    <!-- /wrap -->
+    <a id="stb" href="#" aria-label="Back to top">↑</a>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
